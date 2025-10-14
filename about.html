@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Robin Reverie Fine Art Photography & Film</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/about.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+            <a href="index.html" class="header__logo" aria-label="Robin Reverie Home">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 80 L50 20 L80 80 L50 50 Z" stroke="currentColor" stroke-width="5"/>
+                </svg>
+                <span class="logo__text">Robin Reverie</span>
+            </a>
+            <nav class="nav" aria-label="Main Navigation" id="main-nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                    <li><a href="films.html" class="nav__link">Films</a></li>
+                    <li><a href="about.html" class="nav__link nav__link--active">About</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="button button--primary header__cta">Book Now</a>
+            <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open main menu">
+                <svg class="icon icon--menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section section--padded about-hero" aria-labelledby="about-h1">
+            <h1 class="section-title" id="about-h1">Meet the Artists Behind the Lens</h1>
+            <p class="text-center" style="max-width: 600px; margin: 0 auto;">We believe in capturing moments with intention, transforming fleeting joy into enduring fine art.</p>
+        </section>
+
+        <section class="section" aria-labelledby="bio-heading">
+            <div class="container bio-grid">
+                <div class="bio-grid__image-container">
+                    <img src="/assets/img/robin-reverie-portrait.webp" 
+                         alt="Studio portrait of Robin Sinclair, Lead Photographer" 
+                         class="bio-portrait" 
+                         width="400" height="500" loading="eager">
+                </div>
+                <div class="bio-grid__text">
+                    <h2 id="bio-heading">Robin Sinclair, Lead Artist</h2>
+                    <p>Hello! I'm Robin, and for over a decade, I've dedicated myself to the art of light and connection. My style is defined by its **airy, romantic quality**, drawing heavily on natural light to create images that feel both timeless and deeply personal. I approach every commission not as a job, but as a collaboration, seeking to understand the unique energy of your story.</p>
+                    <p>I find inspiration in European masters, old film grain, and the quiet spaces between spoken words. When I'm not behind the camera, you can find me restoring vintage cameras or enjoying a slow morning with a sketchbook. I am committed to making your experience seamless, joyful, and culminating in a legacy of beautiful art.</p>
+                    <a href="contact.html" class="button button--primary mt-md">Work With Us</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="press-strip" aria-labelledby="press-heading">
+            <div class="container">
+                <h2 id="press-heading">As Seen In</h2>
+                <div class="logo-container">
+                    <img src="/assets/img/logos/vogue-weddings.svg" alt="Vogue Weddings Logo" class="logo-item" width="100" height="30">
+                    <img src="/assets/img/logos/harpers-bazaar.svg" alt="Harper's Bazaar Logo" class="logo-item" width="100" height="30">
+                    <img src="/assets/img/logos/style-me-pretty.svg" alt="Style Me Pretty Logo" class="logo-item" width="100" height="30">
+                    <img src="/assets/img/logos/the-knot.svg" alt="The Knot Magazine Logo" class="logo-item" width="100" height="30">
+                    <img src="/assets/img/logos/over-the-moon.svg" alt="Over The Moon Logo" class="logo-item" width="100" height="30">
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--padded process-timeline" aria-labelledby="process-heading">
+            <div class="container">
+                <h2 class="section-title" id="process-heading">Our Simple, Three-Step Process</h2>
+                <div class="process-steps">
+                    <article class="process-step">
+                        <span class="process-step__number">1</span>
+                        <h3 id="step-inquire">Inquire & Connect</h3>
+                        <p>We start with a conversation. Share your vision and venue details. We'll craft a personalized proposal and schedule a discovery call to ensure we're the perfect fit.</p>
+                    </article>
+
+                    <article class="process-step">
+                        <span class="process-step__number">2</span>
+                        <h3 id="step-shoot">Plan & Shoot</h3>
+                        <p>Once booked, we dive into planning: mood boards, timeline consultation, and scouting. On the day, we work seamlessly, capturing authentic moments with gentle direction.</p>
+                    </article>
+
+                    <article class="process-step">
+                        <span class="process-step__number">3</span>
+                        <h3 id="step-deliver">Curate & Deliver</h3>
+                        <p>We carefully select and edit each image in our signature style. Your private online gallery and custom keepsake box arrive, ready for you to relive the day.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--padded" aria-labelledby="team-heading">
+            <div class="container">
+                <h2 class="section-title" id="team-heading">The Reverie Team</h2>
+                <p class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-xl);">We are a small collective of artists and support staff, committed to excellence and ensuring every detail is handled with care.</p>
+                <div class="team-grid">
+                    <article class="team-member">
+                        <img src="/assets/img/team/robin-sinclair.webp" alt="Headshot of Robin Sinclair" class="team-member__photo" width="200" height="200">
+                        <h4>Robin Sinclair</h4>
+                        <span class="team-member__role">Lead Photographer & Founder</span>
+                        <p class="team-member__bio">Specializes in film photography and creative direction. The chief visionary behind the Reverie aesthetic.</p>
+                    </article>
+                    <article class="team-member">
+                        <img src="/assets/img/team/eli-james.webp" alt="Headshot of Eli James" class="team-member__photo" width="200" height="200">
+                        <h4>Eli James</h4>
+                        <span class="team-member__role">Lead Videographer</span>
+                        <p class="team-member__bio">Master of cinematic storytelling, focusing on candid audio and seamless highlight reel integration.</p>
+                    </article>
+                    <article class="team-member">
+                        <img src="/assets/img/team/sara-chen.webp" alt="Headshot of Sara Chen" class="team-member__photo" width="200" height="200">
+                        <h4>Sara Chen</h4>
+                        <span class="team-member__role">Studio Manager & Editor</span>
+                        <p class="team-member__bio">Handles client communications, post-production workflow, and album design. The organizational heart of the studio.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="contact.html" class="sticky-mobile-cta" aria-label="Work With Us">Work With Us</a>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center; color: var(--color-bg-light); padding: 1rem;">
+             &copy; <span id="current-year">2024</span> Robin Reverie. | <a href="privacy.html" style="color: var(--color-text-secondary);">Privacy</a> | <a href="terms.html" style="color: var(--color-text-secondary);">Terms</a>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+</body>
+</html>

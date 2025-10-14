@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Planning Tips, Destinations & Inspiration | Robin Reverie</title>
+
+    <meta name="description" content="Read our latest articles on wedding planning, destination guides, photography tips, and fine art inspiration.">
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/blog.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+            <a href="index.html" class="header__logo" aria-label="Robin Reverie Home">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 80 L50 20 L80 80 L50 50 Z" stroke="currentColor" stroke-width="5"/>
+                </svg>
+                <span class="logo__text">Robin Reverie</span>
+            </a>
+            <nav class="nav" aria-label="Main Navigation" id="main-nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                    <li><a href="films.html" class="nav__link">Films</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="blog.html" class="nav__link nav__link--active">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="button button--primary header__cta">Book Now</a>
+            <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open main menu">
+                <svg class="icon icon--menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section section--padded" aria-labelledby="blog-h1">
+            <div class="container">
+                <h1 class="section-title" id="blog-h1">Journal & Inspiration</h1>
+                <p class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-xl);">Your resource for fine art wedding planning, vendor spotlight, and destination guides from around the world.</p>
+
+                <div class="blog-controls">
+                    <div class="filter-group" id="category-filters">
+                        <button class="filter-tag is-active" data-filter="all" aria-pressed="true">All Articles</button>
+                        <button class="filter-tag" data-filter="planning" aria-pressed="false">Planning</button>
+                        <button class="filter-tag" data-filter="destination" aria-pressed="false">Destination</button>
+                        <button class="filter-tag" data-filter="vendors" aria-pressed="false">Vendors</button>
+                        <button class="filter-tag" data-filter="advice" aria-pressed="false">Advice</button>
+                    </div>
+                    <input type="search" id="blog-search" class="search-input" placeholder="Search articles by title or tag...">
+                </div>
+
+                <div class="blog-grid" id="blog-grid">
+                    <a href="post-fine-art-photography-explained.html" class="blog-card" data-category="advice" data-title="Fine Art Photography Explained">
+                        <div class="blog-card__image-container">
+                            <img src="/assets/img/blog/post-01-list.webp" alt="Close up of fine art wedding invitation suite" class="blog-card__image" loading="lazy" width="800" height="500">
+                        </div>
+                        <p class="blog-card__meta"><span>Advice</span> | October 10, 2025</p>
+                        <h2>Fine Art Wedding Photography, Explained</h2>
+                        <p>What defines the airy, film-like aesthetic? A deep dive into the style, process, and vision behind fine art imagery.</p>
+                    </a>
+
+                    <a href="post-best-european-elopement-spots.html" class="blog-card" data-category="destination" data-title="Best European Elopement Spots">
+                        <div class="blog-card__image-container">
+                            <img src="/assets/img/blog/post-02-list.webp" alt="Couple eloping on a cliffside in Europe" class="blog-card__image" loading="lazy" width="800" height="500">
+                        </div>
+                        <p class="blog-card__meta"><span>Destination</span> | September 28, 2025</p>
+                        <h2>The 5 Best European Spots for an Intimate Elopement</h2>
+                        <p>From the rugged coast of Scotland to the vineyards of Tuscany, find your dream backdrop for a minimal celebration.</p>
+                    </a>
+                    
+                    <a href="post-questions-to-ask-your-planner.html" class="blog-card" data-category="planning" data-title="10 Must-Ask Questions for Your Wedding Planner">
+                        <div class="blog-card__image-container">
+                            <img src="/assets/img/blog/post-03-list.webp" alt="Wedding planner reviewing a seating chart" class="blog-card__image" loading="lazy" width="800" height="500">
+                        </div>
+                        <p class="blog-card__meta"><span>Planning</span> | September 15, 2025</p>
+                        <h2>10 Must-Ask Questions for Your Wedding Planner</h2>
+                        <p>Ensure you hire the right professional. Here is our list of essential questions to cover during your consultations.</p>
+                    </a>
+
+                    <a href="post-vendor-spotlight-floral-design.html" class="blog-card" data-category="vendors" data-title="Vendor Spotlight: Ethereal Floral Design">
+                        <div class="blog-card__image-container">
+                            <img src="/assets/img/blog/post-04-list.webp" alt="Large white and green floral installation at a reception" class="blog-card__image" loading="lazy" width="800" height="500">
+                        </div>
+                        <p class="blog-card__meta"><span>Vendors</span> | August 20, 2025</p>
+                        <h2>Vendor Spotlight: Working with an Ethereal Floral Designer</h2>
+                        <p>We feature our favorite floral artist and discuss how to achieve that coveted light, organic look for your wedding.</p>
+                    </a>
+                </div>
+
+                <div id="no-results" class="text-center" style="display: none; margin-top: var(--spacing-xl);">
+                    <p>No articles match your current filters or search term.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <a href="contact.html" class="sticky-mobile-cta" aria-label="Book Now">Book</a>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center; color: var(--color-bg-light); padding: 1rem;">
+             &copy; <span id="current-year">2024</span> Robin Reverie. | <a href="privacy.html" style="color: var(--color-text-secondary);">Privacy</a> | <a href="terms.html" style="color: var(--color-text-secondary);">Terms</a>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/blog.js" defer></script>
+</body>
+</html>

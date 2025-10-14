@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Château Provence Highlight Reel",
+    "location": "Provence, France",
+    "slug": "chateau-provence-film",
+    "type": "html5",
+    "video_src": "/assets/video/chateau-provence.mp4",
+    "poster_400": "/assets/video/posters/chateau-provence-400.webp",
+    "poster_800": "/assets/video/posters/chateau-provence-800.webp"
+  },
+  {
+    "id": 2,
+    "title": "Sienna Wedding Story",
+    "location": "California Coast",
+    "slug": "sienna-wedding-film",
+    "type": "youtube",
+    "video_src": "https://www.youtube.com/embed/dQw4w9WgXcQ", 
+    "poster_400": "/assets/video/posters/sienna-wedding-400.webp",
+    "poster_800": "/assets/video/posters/sienna-wedding-800.webp"
+  },
+  {
+    "id": 3,
+    "title": "Intimate Elopement Teaser",
+    "location": "Rocky Mountains",
+    "slug": "mountain-elopement-film",
+    "type": "html5",
+    "video_src": "/assets/video/mountain-elopement.mp4",
+    "poster_400": "/assets/video/posters/mountain-elopement-400.webp",
+    "poster_800": "/assets/video/posters/mountain-elopement-800.webp"
+  },
+  {
+    "id": 4,
+    "title": "Editorial Lookbook Film",
+    "location": "London Studio",
+    "slug": "editorial-lookbook-film",
+    "type": "youtube",
+    "video_src": "https://www.youtube.com/embed/yFjYgR5-E7A",
+    "poster_400": "/assets/video/posters/editorial-lookbook-400.webp",
+    "poster_800": "/assets/video/posters/editorial-lookbook-800.webp"
+  }
+]

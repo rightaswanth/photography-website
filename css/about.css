@@ -1,0 +1,229 @@
+/* FILE: /css/about.css */
+
+/* -------------------------------------------------------------------------- */
+/* 1. Hero and Bio Section */
+/* -------------------------------------------------------------------------- */
+
+.about-hero {
+    max-width: var(--size-content-max-width);
+    margin: 0 auto var(--spacing-xl);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.bio-grid {
+    display: grid;
+    gap: var(--spacing-xl);
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .bio-grid {
+        grid-template-columns: 1fr 2fr;
+        text-align: left;
+    }
+    .bio-grid__image-container {
+        grid-column: 1 / 2;
+    }
+    .bio-grid__text {
+        grid-column: 2 / 3;
+    }
+}
+
+.bio-grid__image-container {
+    padding: var(--spacing-md);
+}
+
+.bio-portrait {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-deep);
+}
+
+.bio-grid__text h2 {
+    font-size: var(--font-size-h3);
+    color: var(--color-brand);
+    margin-bottom: var(--spacing-sm);
+}
+
+.bio-grid__text p {
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Process Timeline (Three Steps) */
+/* -------------------------------------------------------------------------- */
+
+.process-timeline {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg-light);
+}
+
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+    .process-steps {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: var(--spacing-md);
+    }
+}
+
+.process-step {
+    flex: 1;
+    text-align: center;
+    padding: var(--spacing-md);
+    position: relative;
+}
+
+.process-step__icon {
+    font-size: 3rem;
+    color: var(--color-brand);
+    margin-bottom: var(--spacing-sm);
+}
+
+.process-step h3 {
+    font-family: var(--font-family-secondary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+}
+
+.process-step__number {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: var(--color-text-primary);
+    color: var(--color-text-on-accent);
+    margin: 0 auto var(--spacing-sm);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+}
+
+/* Connecting lines for desktop only */
+@media (min-width: 768px) {
+    .process-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 30px; /* Aligns with the number */
+        right: calc(-50% + 20px);
+        width: calc(100% - 40px);
+        height: 1px;
+        background-color: var(--color-border);
+        z-index: 1;
+    }
+    .process-step__number {
+        z-index: 2;
+        position: relative;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* 3. Team Grid */
+/* -------------------------------------------------------------------------- */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+@media (min-width: 600px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member__photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    max-width: 200px;
+    margin: 0 auto var(--spacing-sm);
+    box-shadow: var(--shadow-subtle);
+}
+
+.team-member h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}
+
+.team-member__role {
+    font-size: var(--font-size-small);
+    color: var(--color-brand);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.team-member__bio {
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. Press / Logos Strip */
+/* -------------------------------------------------------------------------- */
+
+.press-strip {
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.press-strip h2 {
+    text-align: center;
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.logo-item {
+    max-width: 100px;
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.logo-item:hover {
+    opacity: 1;
+}

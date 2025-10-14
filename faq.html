@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Frequently Asked Questions | Robin Reverie</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/faq.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+            <a href="index.html" class="header__logo" aria-label="Robin Reverie Home">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 80 L50 20 L80 80 L50 50 Z" stroke="currentColor" stroke-width="5"/>
+                </svg>
+                <span class="logo__text">Robin Reverie</span>
+            </a>
+            <nav class="nav" aria-label="Main Navigation" id="main-nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                    <li><a href="films.html" class="nav__link">Films</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="button button--primary header__cta">Book Now</a>
+            <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open main menu">
+                <svg class="icon icon--menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section section--padded" aria-labelledby="faq-h1">
+            <div class="container">
+                <h1 class="section-title" id="faq-h1">Frequently Asked Questions</h1>
+                <p class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-xl);">Find quick answers to common questions about our style, pricing, booking process, and more.</p>
+
+                <div class="faq-container" role="tablist" aria-multiselectable="true">
+
+                    <div class="faq-item">
+                        <h2 id="faq-q1-header" style="margin:0;">
+                            <button 
+                                class="faq-button" 
+                                aria-expanded="false" 
+                                aria-controls="faq-q1-content" 
+                                id="faq-q1-trigger"
+                                role="tab"
+                                tabindex="0"
+                            >
+                                What is 'Fine Art' wedding photography?
+                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </button>
+                        </h2>
+                        <div 
+                            id="faq-q1-content" 
+                            role="tabpanel" 
+                            aria-labelledby="faq-q1-trigger" 
+                            class="faq-content"
+                            hidden
+                        >
+                            <p>Our style is **airy, romantic, and film-inspired**. It prioritizes natural light, careful composition, and soft color palettes to create timeless images. We mix intentional, gently posed portraits with authentic, candid documentary moments throughout the day.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h2 id="faq-q2-header" style="margin:0;">
+                            <button 
+                                class="faq-button" 
+                                aria-expanded="false" 
+                                aria-controls="faq-q2-content" 
+                                id="faq-q2-trigger"
+                                role="tab"
+                                tabindex="-1"
+                            >
+                                Do you travel for destination weddings?
+                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </button>
+                        </h2>
+                        <div 
+                            id="faq-q2-content" 
+                            role="tabpanel" 
+                            aria-labelledby="faq-q2-trigger" 
+                            class="faq-content"
+                            hidden
+                        >
+                            <p>Absolutely! We love documenting love stories worldwide. We offer customized destination packages that typically include a flat-rate travel fee, covering flights, accommodation, and per diems, making the process simple and transparent for you.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h2 id="faq-q3-header" style="margin:0;">
+                            <button 
+                                class="faq-button" 
+                                aria-expanded="false" 
+                                aria-controls="faq-q3-content" 
+                                id="faq-q3-trigger"
+                                role="tab"
+                                tabindex="-1"
+                            >
+                                How do we secure our date and what is the deposit?
+                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </button>
+                        </h2>
+                        <div 
+                            id="faq-q3-content" 
+                            role="tabpanel" 
+                            aria-labelledby="faq-q3-trigger" 
+                            class="faq-content"
+                            hidden
+                        >
+                            <p>To secure your date, we require a signed contract and a **30% non-refundable retainer**. The remainder is paid in two installments, with the final payment due 30 days before your wedding. Head over to our <a href="services.html">Services page</a> for detailed pricing and booking steps.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <h2 id="faq-q4-header" style="margin:0;">
+                            <button 
+                                class="faq-button" 
+                                aria-expanded="false" 
+                                aria-controls="faq-q4-content" 
+                                id="faq-q4-trigger"
+                                role="tab"
+                                tabindex="-1"
+                            >
+                                When can we expect to receive our photos and film?
+                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            </button>
+                        </h2>
+                        <div 
+                            id="faq-q4-content" 
+                            role="tabpanel" 
+                            aria-labelledby="faq-q4-trigger" 
+                            class="faq-content"
+                            hidden
+                        >
+                            <p>We deliver a sneak peek gallery of 50-75 images within 72 hours of your wedding! The full, high-resolution photo gallery is delivered via an online proofing platform within **8-10 weeks**. If your package includes film, the cinematic highlight reel will follow 2 weeks after the photo delivery.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--cta-final section--muted" id="contact-cta">
+            <div class="container text-center">
+                <h2 class="section-title">Didn't Find Your Answer?</h2>
+                <p class="cta__subtext">If your question wasn't covered, please reach out directly—we're happy to chat!</p>
+                <a href="contact.html" class="button button--primary button--large">Contact Us Now</a>
+            </div>
+        </section>
+    </main>
+
+    <a href="contact.html" class="sticky-mobile-cta" aria-label="Book Now">Book</a>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center; color: var(--color-bg-light); padding: 1rem;">
+             &copy; <span id="current-year">2024</span> Robin Reverie. | <a href="privacy.html" style="color: var(--color-text-secondary);">Privacy</a> | <a href="terms.html" style="color: var(--color-text-secondary);">Terms</a>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/faq.js" defer></script>
+</body>
+</html>

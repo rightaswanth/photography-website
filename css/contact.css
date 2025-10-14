@@ -1,0 +1,161 @@
+/* FILE: /css/contact.css */
+
+/* -------------------------------------------------------------------------- */
+/* 1. Contact Form Structure */
+/* -------------------------------------------------------------------------- */
+
+.contact-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md) var(--spacing-lg);
+}
+
+@media (min-width: 600px) {
+    .contact-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Force specific elements to span full width */
+.form-group--full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.form-group input:not([type="file"]), 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-brand);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-brand-light);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Validation and Feedback */
+/* -------------------------------------------------------------------------- */
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+    border-color: #e3342f; /* Red for error */
+}
+
+.error-message {
+    color: #e3342f;
+    font-size: var(--font-size-small);
+    margin-top: 5px;
+    display: none;
+}
+
+/* Visibility classes for JS */
+.error-message.show {
+    display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. Date & Availability Check */
+/* -------------------------------------------------------------------------- */
+
+#date-feedback {
+    margin-top: 5px;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+}
+
+.date-available {
+    color: green;
+}
+
+.date-unavailable {
+    color: #e3342f; /* Red */
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. File Upload (Basic styling) */
+/* -------------------------------------------------------------------------- */
+
+.file-upload-info {
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    margin-top: 5px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. Submit Section & Loading */
+/* -------------------------------------------------------------------------- */
+
+.submit-section {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+}
+
+#form-status {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    min-height: 20px; /* Prevent layout shift */
+}
+
+.button-loading .button-text {
+    visibility: hidden;
+}
+
+.button-loading .spinner {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner {
+    display: none;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

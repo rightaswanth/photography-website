@@ -1,0 +1,223 @@
+/* FILE: /css/gallery.css */
+
+/* -------------------------------------------------------------------------- */
+/* 1. Case Study Header */
+/* -------------------------------------------------------------------------- */
+
+.case-study-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+    text-align: center;
+}
+
+.case-study-header h1 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 400;
+}
+
+.case-study-meta {
+    font-size: var(--font-size-base);
+    color: var(--color-brand);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-md);
+}
+
+.case-study-narrative {
+    font-family: var(--font-family-secondary);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.case-study-hero {
+    width: 100%;
+    margin-bottom: var(--spacing-xl);
+    max-height: 80vh;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-subtle);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Gallery Viewer & Slideshow */
+/* -------------------------------------------------------------------------- */
+
+.gallery-viewer {
+    position: relative;
+    max-width: var(--size-content-max-width);
+    margin: var(--spacing-xl) auto;
+}
+
+.slideshow-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+}
+
+.slideshow-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.slide {
+    flex-shrink: 0;
+    width: 100%;
+    /* Maintain an aspect ratio for a consistent look */
+    aspect-ratio: 4 / 3; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure full image is visible */
+    border-radius: var(--border-radius);
+}
+
+.slideshow-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    padding: 0 var(--spacing-md);
+    pointer-events: none; /* Allows clicks through to track if needed */
+}
+
+.control-button {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-subtle);
+    transition: background-color 0.2s;
+    pointer-events: all; /* Make button clickable */
+}
+
+.control-button:hover,
+.control-button:focus {
+    background-color: var(--color-brand);
+    color: var(--color-text-on-accent);
+    border-color: var(--color-brand);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. Thumbnails & Caption */
+/* -------------------------------------------------------------------------- */
+
+.thumbnail-strip {
+    display: flex;
+    overflow-x: scroll;
+    padding: var(--spacing-sm) 0;
+    gap: var(--spacing-sm);
+    scrollbar-width: none; /* Firefox hide scrollbar */
+}
+.thumbnail-strip::-webkit-scrollbar {
+    display: none; /* WebKit hide scrollbar */
+}
+
+.thumbnail-item {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.2s;
+    border-radius: var(--border-radius);
+}
+
+.thumbnail-item:hover,
+.thumbnail-item:focus {
+    opacity: 1;
+    border-color: var(--color-brand);
+}
+
+.thumbnail-item.active {
+    opacity: 1;
+    border-color: var(--color-brand);
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.slide-caption {
+    text-align: center;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-sm);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. Action Bar & Meta */
+/* -------------------------------------------------------------------------- */
+
+.gallery-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-md);
+}
+
+.gallery-action-button {
+    /* Inherits button--secondary styling, but customize for icon-only */
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.gallery-action-button:hover,
+.gallery-action-button:focus {
+    background-color: var(--color-brand);
+    color: var(--color-text-on-accent);
+    border-color: var(--color-brand);
+}
+
+.gallery-action-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.gallery-credits {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    font-size: var(--font-size-small);
+    color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-sm);
+}
+
+.gallery-credits span {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}

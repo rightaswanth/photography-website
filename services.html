@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing | Robin Reverie</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/services.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+            <a href="index.html" class="header__logo" aria-label="Robin Reverie Home">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 80 L50 20 L80 80 L50 50 Z" stroke="currentColor" stroke-width="5"/>
+                </svg>
+                <span class="logo__text">Robin Reverie</span>
+            </a>
+            <nav class="nav" aria-label="Main Navigation" id="main-nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                    <li><a href="films.html" class="nav__link">Films</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="services.html" class="nav__link nav__link--active">Services</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="button button--primary header__cta">Book Now</a>
+            <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open main menu">
+                <svg class="icon icon--menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section section--padded" aria-labelledby="pricing-h1">
+            <div class="container">
+                <h1 class="section-title" id="pricing-h1">Pricing & Packages</h1>
+                <p class="text-center" style="max-width: 700px; margin: 0 auto var(--spacing-xl);">Investment begins here. All packages include high-resolution digital files and our signature fine-art editing style. Customization is always available.</p>
+
+                <div class="pricing-grid">
+
+                    <div class="package-card" data-package="Elopement">
+                        <p class="package-card__subtext">Start Here</p>
+                        <h3>The Elopement</h3>
+                        
+                        <div class="package-card__price" data-price="5,500">
+                            $<span id="price-elopement">5,500</span>
+                        </div>
+                        <button class="price-toggle-button" data-target="price-elopement">Request Price</button>
+
+                        <ul class="package-card__feature-list">
+                            <li>4 Hours Coverage</li>
+                            <li>1 Photographer</li>
+                            <li>300+ Edited Images</li>
+                            <li>Private Online Gallery</li>
+                            <li>Digital Download Rights</li>
+                            <li>Timeline Consultation</li>
+                        </ul>
+
+                        <div class="package-card__cta">
+                            <a href="#" class="button button--secondary book-package-btn" data-package-name="The Elopement">Book Elopement</a>
+                        </div>
+                    </div>
+
+                    <div class="package-card package-card--highlight" data-package="Classic">
+                        <p class="package-card__subtext">Most Popular</p>
+                        <h3>The Classic</h3>
+                        
+                        <div class="package-card__price" data-price="8,900">
+                            $<span id="price-classic">8,900</span>
+                        </div>
+                         <button class="price-toggle-button" data-target="price-classic">Request Price</button>
+
+                        <ul class="package-card__feature-list">
+                            <li>8 Hours Coverage</li>
+                            <li>**2 Photographers**</li>
+                            <li>600+ Edited Images</li>
+                            <li>Private Online Gallery</li>
+                            <li>Digital Download Rights</li>
+                            <li>Custom USB Keepsake</li>
+                            <li>**One Hour Engagement Session**</li>
+                        </ul>
+
+                        <div class="package-card__cta">
+                            <a href="#" class="button button--primary book-package-btn" data-package-name="The Classic">Book Classic</a>
+                        </div>
+                    </div>
+
+                    <div class="package-card" data-package="Signature">
+                        <p class="package-card__subtext">Full Service</p>
+                        <h3>The Signature</h3>
+                        
+                        <div class="package-card__price" data-price="12,000">
+                            $<span id="price-signature">12,000</span>
+                        </div>
+                         <button class="price-toggle-button" data-target="price-signature">Request Price</button>
+
+                        <ul class="package-card__feature-list">
+                            <li>10 Hours Coverage</li>
+                            <li>2 Photographers</li>
+                            <li>800+ Edited Images</li>
+                            <li>Private Online Gallery</li>
+                            <li>Digital Download Rights</li>
+                            <li>Custom USB Keepsake</li>
+                            <li>Engagement Session</li>
+                            <li>**Custom Fine Art Album**</li>
+                            <li>**Film Highlight Reel**</li>
+                        </ul>
+
+                        <div class="package-card__cta">
+                            <a href="#" class="button button--secondary book-package-btn" data-package-name="The Signature">Book Signature</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--padded section--muted accordion-section" aria-label="Additional Booking Details">
+            <div class="container">
+                <h2 class="section-title">Common Questions & Policies</h2>
+                
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false" aria-controls="content-addons" id="header-addons">
+                        <span>Included Add-Ons & Upgrades</span>
+                        <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div id="content-addons" role="region" aria-labelledby="header-addons" class="accordion-content">
+                        <p>We offer a flexible suite of professional add-ons to customize your package:</p>
+                        <ul>
+                            <li><strong>Destination Fees:</strong> Calculated based on location (flat fee, not hourly).</li>
+                            <li><strong>Extra Hours:</strong> Billed at $550/hour.</li>
+                            <li><strong>Custom Fine Art Albums:</strong> Starting at $1,500.</li>
+                            <li><strong>Second Shooter:</strong> Included in Classic and Signature packages, $800 add-on for Elopement.</li>
+                            <li><strong>4K Highlight Film:</strong> Integrated with Signature, available as an add-on for $3,000.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false" aria-controls="content-deposit" id="header-deposit">
+                        <span>Deposit & Payment Policy</span>
+                        <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div id="content-deposit" role="region" aria-labelledby="header-deposit" class="accordion-content">
+                        <p>A non-refundable retainer fee is required to secure your date:</p>
+                        <ul>
+                            <li><strong>Retainer:</strong> 30% of the total package price.</li>
+                            <li><strong>Second Payment:</strong> 50% due six months prior to the event date.</li>
+                            <li><strong>Final Payment:</strong> Remaining 20% due 30 days prior to the event date.</li>
+                        </ul>
+                        <p>All contracts are processed securely online. <a href="#" class="deposit-cta">Ready to pay the retainer? Click here to start checkout.</a></p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-button" aria-expanded="false" aria-controls="content-contract" id="header-contract">
+                        <span>Sample Contract Terms (Highlights)</span>
+                        <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <div id="content-contract" role="region" aria-labelledby="header-contract" class="accordion-content">
+                        <ul>
+                            <li>Photographer retains copyright; client receives unlimited personal use license.</li>
+                            <li>Force Majeure Clause addresses unavoidable cancellations.</li>
+                            <li>One complimentary rescheduling within 12 months for emergencies (subject to availability).</li>
+                            <li>Meal provision required for all bookings of 6+ hours.</li>
+                            <li>Delivery time for final gallery is 8-10 weeks from the event date.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <a href="contact.html" class="sticky-mobile-cta" aria-label="Book Now">Book</a>
+
+    <div id="booking-modal" style="display: none;">
+        </div>
+
+
+    <footer class="footer">
+        <div class="container" style="text-align: center; color: var(--color-bg-light); padding: 1rem;">
+             &copy; <span id="current-year">2024</span> Robin Reverie. | <a href="privacy.html" style="color: var(--color-text-secondary);">Privacy</a> | <a href="terms.html" style="color: var(--color-text-secondary);">Terms</a>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/services.js" defer></script>
+</body>
+</html>

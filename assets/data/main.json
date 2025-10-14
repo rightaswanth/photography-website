@@ -1,0 +1,53 @@
+{
+  "brand": "Robin Reverie",
+  "style": "Fine-Art Minimal (light, airy, editorial)",
+  "pages": [
+    {"name": "Home", "file": "index.html", "features": ["Hero", "Featured Galleries", "Testimonials", "CTA"]},
+    {"name": "Portfolio Listing", "file": "portfolio.html", "features": ["Filterable grid"]},
+    {"name": "Single Gallery / Case-Study", "file": "gallery-<slug>.html", "features": ["Full-screen viewer", "Captions", "Keyboard navigation"]},
+    {"name": "Films", "file": "films.html", "features": ["Video highlight reels"]},
+    {"name": "About", "file": "about.html", "features": ["Bio", "Team", "Process"]},
+    {"name": "Services & Pricing", "file": "services.html", "features": ["Packages", "Booking CTA"]},
+    {"name": "Client Proofing", "file": "proofing.html", "features": ["Client-side password demo", "Selects/Favorites UI"]},
+    {"name": "Blog / Real Weddings Listing", "file": "blog.html", "features": ["Article listing"]},
+    {"name": "Single Post", "file": "post-<slug>.html", "features": ["Post content"]},
+    {"name": "FAQ", "file": "faq.html", "features": ["Accordion UI"]},
+    {"name": "Contact / Book", "file": "contact.html", "features": ["Form validation", "Simulated payment flow"]},
+    {"name": "Thanks / Confirmation", "file": "thanks.html", "features": ["Success message"]},
+    {"name": "Privacy Policy", "file": "privacy.html", "features": ["Legal text"]},
+    {"name": "Terms & Conditions", "file": "terms.html", "features": ["Legal text"]}
+  ],
+  "tokens": {
+    "fonts": {
+      "primary": "Sans-serif (e.g., Inter, for body/UI)",
+      "secondary": "Serif (e.g., Playfair Display, for headings/editorial flair)",
+      "googleFonts": true
+    },
+    "colors": {
+      "primary": "hsl(0, 0%, 10%)",
+      "secondary": "hsl(40, 40%, 60%)",
+      "background": "hsl(0, 0%, 100%)",
+      "lightAccent": "hsl(0, 0%, 95%)"
+    },
+    "cssVariables": [
+      "--color-text-primary",
+      "--color-text-secondary",
+      "--color-bg-body",
+      "--color-bg-light",
+      "--font-family-primary",
+      "--font-family-secondary",
+      "--size-content-max-width",
+      "--spacing-unit"
+    ]
+  },
+  "devServerCommand": "e.g., python3 -m http.server 8080 or live-server",
+  "notes": [
+    "Production-ready static HTML/CSS/JS (vanilla)",
+    "Fully responsive (mobile-first)",
+    "Semantic HTML5 & ARIA implemented",
+    "Image optimization: <picture>, WebP, srcset (400/800/1600), native lazy loading",
+    "Gallery implementation: CSS-grid/masonry + keyboard-navigable lightbox",
+    "Performance optimization for Lighthouse (minify, defer non-critical JS, preload LCP)",
+    "README.md will cover dev instructions, API key placeholders, accessibility, SEO, and deployment"
+  ]
+}

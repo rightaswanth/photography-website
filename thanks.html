@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation | Thank You | Robin Reverie</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Confirmation specific styles */
+        .confirmation-box {
+            background-color: var(--color-bg-light);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-subtle);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .confirmation-box h1 {
+            color: var(--color-brand);
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        .confirmation-summary {
+            text-align: left;
+            margin: var(--spacing-md) 0;
+            padding: var(--spacing-md);
+            border: 1px dashed var(--color-border);
+            background-color: var(--color-bg-base);
+        }
+        .confirmation-summary p {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        .summary-label {
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            display: inline-block;
+            min-width: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+            <a href="index.html" class="header__logo" aria-label="Robin Reverie Home">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 80 L50 20 L80 80 L50 50 Z" stroke="currentColor" stroke-width="5"/>
+                </svg>
+                <span class="logo__text">Robin Reverie</span>
+            </a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section section--padded" aria-labelledby="thanks-h1">
+            <div class="container">
+                <div class="confirmation-box">
+                    <h1 id="thanks-h1">Inquiry Sent!</h1>
+                    <p class="cta__subtext">Thank you for sharing the details of your special day. We are excited!</p>
+
+                    <div id="booking-details" class="confirmation-summary">
+                        <p>Loading booking summary...</p>
+                    </div>
+
+                    <h2>What Happens Next?</h2>
+                    <ol style="text-align: left; margin-top: var(--spacing-md); padding-left: 20px;">
+                        <li><strong>Availability Check:</strong> We manually review the date and details.</li>
+                        <li><strong>Custom Proposal:</strong> We will email you a personalized pricing proposal, tailored to your package interest and event scope, within 24-48 hours.</li>
+                        <li><strong>Discovery Call:</strong> We'll invite you to schedule a quick call to ensure we are the perfect fit!</li>
+                    </ol>
+
+                    <a href="portfolio.html" class="button button--secondary" style="margin-top: var(--spacing-lg);">Explore the Portfolio While You Wait</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center; color: var(--color-bg-light); padding: 1rem;">
+             &copy; <span id="current-year">2024</span> Robin Reverie. | <a href="privacy.html" style="color: var(--color-text-secondary);">Privacy</a> | <a href="terms.html" style="color: var(--color-text-secondary);">Terms</a>
+        </div>
+    </footer>
+    
+    <script src="/js/main.js" defer></script>
+    <script>
+        // Inline script to handle booking summary display
+        document.addEventListener('DOMContentLoaded', () => {
+            const summaryDiv = document.getElementById('booking-details');
+            const storedSummary = sessionStorage.getItem('bookingSummary');
+            
+            if (storedSummary) {
+                const data = JSON.parse(storedSummary);
+                let html = '<h3>Your Submission Details:</h3>';
+                
+                // Capitalize and format keys for display
+                const displayMap = {
+                    name: "Name", email: "Email", phone: "Phone", 
+                    event_date: "Event Date", venue: "Venue/Location", 
+                    package_interest: "Package Interest", budget: "Budget", 
+                    message: "Message"
+                };
+
+                for (const key in displayMap) {
+                    if (data[key] && data[key].trim() !== '') {
+                        const value = data[key] === "Custom" ? "Custom Quote" : data[key];
+                        html += `<p><span class="summary-label">${displayMap[key]}:</span> ${value}</p>`;
+                    }
+                }
+                
+                summaryDiv.innerHTML = html;
+                
+                // Clear storage to prevent re-display on refresh
+                sessionStorage.removeItem('bookingSummary');
+
+            } else {
+                summaryDiv.innerHTML = '<p style="color:red;">No booking summary found. Please check your email for confirmation.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

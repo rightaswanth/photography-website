@@ -1,0 +1,44 @@
+# FINAL QA CHECKLIST: Robin Reverie Website
+
+This checklist should be run to ensure all interactive and accessibility features function as intended across different devices.
+
+## 1. General & Navigation Checks (Desktop & Mobile)
+
+- [ ] All pages load without console errors.
+- [ ] **Mobile:** The hamburger menu button (on /index.html, etc.) opens and closes the main navigation correctly.
+- [ ] **Mobile:** The sticky mobile CTA button is visible and links to /contact.html.
+- [ ] The footer links (/privacy.html, /terms.html) are functional.
+- [ ] Scroll animations (CSS/JS controlled) trigger correctly on relevant pages (e.g., header fading/shrinking).
+
+## 2. Interactive Component Tests
+
+- [ ] **Portfolio (/portfolio.html):** Click all category tags (e.g., 'Destination', 'Elopement'). The grid filters correctly.
+- [ ] **Blog Listing (/blog.html):**
+    - [ ] Click category tags to filter the list.
+    - [ ] Use the Search input to filter by keywords (e.g., 'Art', 'European').
+- [ ] **FAQ (/faq.html):**
+    - [ ] Click accordion headers to open and close sections.
+    - [ ] Use **Tab** key to move focus between headers.
+    - [ ] Use **Arrow Up/Down** keys to move focus between headers (accessibility test).
+    - [ ] Press **Enter/Space** on a focused header to toggle its state (accessibility test).
+
+## 3. Client Proofing Test (/proofing.html)
+
+- [ ] Submit with an **incorrect** password. Error message displays.
+- [ ] Submit with the correct password (`{{PROOFING_PASSWORD}}`). Gallery view displays.
+- [ ] Click the **heart icon** on several images to favorite them.
+- [ ] The "Favorites: X" count updates correctly.
+- [ ] The "Download Selected (X)" button updates and enables/disables correctly.
+- [ ] Click "Download Selected." Confirm the simulation prompt appears and triggers sequential downloads.
+
+## 4. Contact & Booking Test (/contact.html)
+
+- [ ] **Client-side Validation:** Submit the form empty. All required field error messages display below inputs.
+- [ ] **Error Reset:** Type into an error field; the error message should disappear.
+- [ ] **Availability Check (Negative):** Enter a **blocked date** (`2026-06-12`, `2026-07-04`, or `2026-09-19`). The red "Unavailable" message appears.
+- [ ] **Availability Check (Positive):** Enter an **available future date**. The green "Available" message appears.
+- [ ] **Sandbox Test:** Fill out all required fields with a *non-blocked* date and submit.
+    - [ ] The submit button shows **loading state** and is disabled.
+    - [ ] The status bar updates ("Simulating secure checkout...").
+    - [ ] Page redirects to **/thanks.html**.
+- [ ] **Confirmation Page (/thanks.html):** The page displays a summary of the data submitted from the previous form (retrieved from `sessionStorage`).

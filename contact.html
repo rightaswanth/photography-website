@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Booking | Robin Reverie Fine Art Photography & Film</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/contact.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__content">
+            <a href="index.html" class="header__logo" aria-label="Robin Reverie Home">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 80 L50 20 L80 80 L50 50 Z" stroke="currentColor" stroke-width="5"/>
+                </svg>
+                <span class="logo__text">Robin Reverie</span>
+            </a>
+            <nav class="nav" aria-label="Main Navigation" id="main-nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+                    <li><a href="films.html" class="nav__link">Films</a></li>
+                    <li><a href="about.html" class="nav__link">About</a></li>
+                    <li><a href="services.html" class="nav__link">Services</a></li>
+                    <li><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="button button--primary header__cta">Book Now</a>
+            <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Open main menu">
+                <svg class="icon icon--menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="section section--padded" aria-labelledby="contact-h1">
+            <div class="container contact-container">
+                <h1 class="section-title" id="contact-h1">Let's Discuss Your Vision</h1>
+                <p class="text-center" style="max-width: 600px; margin: 0 auto var(--spacing-xl);">Please fill out the form below with as much detail as possible so we can check availability and send you a customized proposal.</p>
+
+                <form id="booking-form" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Your Name*</label>
+                        <input type="text" id="name" name="name" required aria-describedby="name-error">
+                        <span id="name-error" class="error-message">Please enter your full name.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" required aria-describedby="email-error">
+                        <span id="email-error" class="error-message">A valid email is required.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="event-date">Event Date*</label>
+                        <input type="date" id="event-date" name="event_date" required min="2024-01-01" aria-describedby="date-error date-feedback">
+                        <span id="date-error" class="error-message">Please select a valid event date.</span>
+                        <div id="date-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="venue">Venue / Location*</label>
+                        <input type="text" id="venue" name="venue" required aria-describedby="venue-error">
+                        <span id="venue-error" class="error-message">Please provide your venue or location.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="package-interest">Package Interest</label>
+                        <select id="package-interest" name="package_interest">
+                            <option value="">Select a package...</option>
+                            <option value="Signature">Signature (Full Service)</option>
+                            <option value="Classic">Classic (Most Popular)</option>
+                            <option value="Elopement">Elopement (Intimate)</option>
+                            <option value="Custom">Custom Quote</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-group--full-width">
+                        <label for="budget">Estimated Photography/Film Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select range...</option>
+                            <option value="5k-8k">$5,000 - $8,000</option>
+                            <option value="8k-12k">$8,000 - $12,000</option>
+                            <option value="12k+">$12,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group form-group--full-width">
+                        <label for="message">Tell Us About Your Day*</label>
+                        <textarea id="message" name="message" rows="4" required aria-describedby="message-error"></textarea>
+                        <span id="message-error" class="error-message">Please share some details about your event.</span>
+                    </div>
+
+                    <div class="form-group form-group--full-width">
+                        <label for="file-upload">Upload Moodboard/Inspo (Optional)</label>
+                        <input type="file" id="file-upload" name="file_upload" accept=".jpg, .jpeg, .png, .pdf">
+                        <p class="file-upload-info">Max file size: 20MB (.jpg, .png, .pdf only)</p>
+                    </div>
+
+                    <div class="submit-section">
+                        <button type="submit" class="button button--primary button--large" id="submit-button">
+                            <span class="button-text">Send Inquiry & Check Availability</span>
+                            <div class="spinner"></div>
+                        </button>
+                        <p id="form-status" role="status" aria-live="assertive"></p>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <a href="contact.html" class="sticky-mobile-cta" aria-label="Book Now">Book</a>
+
+    <footer class="footer">
+        <div class="container" style="text-align: center; color: var(--color-bg-light); padding: 1rem;">
+             &copy; <span id="current-year">2024</span> Robin Reverie. | <a href="privacy.html" style="color: var(--color-text-secondary);">Privacy</a> | <a href="terms.html" style="color: var(--color-text-secondary);">Terms</a>
+        </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+    <script src="/js/contact.js" defer></script>
+</body>
+</html>
