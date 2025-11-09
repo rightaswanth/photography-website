@@ -43,21 +43,31 @@
 /* 2. Gallery Grid (Masonry-like with CSS Grid) */
 /* -------------------------------------------------------------------------- */
 
+/* Replace the grid-based masonry with flexbox columns for better control over alignment and no gaps */
 .gallery-grid-portfolio {
-    display: grid;
-    /* Basic grid setup: 1 column on mobile, up to 3 columns on desktop */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: nowrap;
     gap: var(--spacing-md);
     padding: var(--spacing-md) 0;
+    overflow-x: auto;
+    /* For mobile scrolling if needed, but columns stack */
 }
 
 @media (min-width: 768px) {
-    /* Use a fixed column count for finer control and masonry effect */
     .gallery-grid-portfolio {
-        grid-template-columns: repeat(3, 1fr);
-        /* Set explicit row gaps for visual break */
-        grid-auto-rows: 10px; /* Base row height for spacing */
+        flex-wrap: nowrap;
+        overflow-x: visible;
     }
+}
+
+/* Column containers for masonry layout */
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    min-width: 0;
+    /* Allow flex shrink */
 }
 
 .gallery-item {
@@ -67,6 +77,11 @@
     position: relative;
     box-shadow: var(--shadow-subtle);
     transition: transform 0.5s ease, opacity 0.5s ease;
+    flex-shrink: 0;
+    /* Maintain fixed height */
+
+    /* Uniform 4:6 (2:3) aspect ratio for all cards - height doubled from 4:3 */
+    aspect-ratio: 2 / 3;
 
     /* Initial state for fade & translate animation */
     opacity: 0;
@@ -78,23 +93,31 @@
     transform: translateY(0);
 }
 
-/* Masonry-like sizing: Define different image heights to achieve the effect */
-.gallery-item:nth-child(5n + 1) {
-    grid-row-end: span 30; /* Medium height */
+/* Remove all nth-child grid-row-end spans - heights now set via JS for balance */
+.gallery-card-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
-.gallery-item:nth-child(5n + 2) {
-    grid-row-end: span 45; /* Tall height (portrait) */
+
+.gallery-card-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
-.gallery-item:nth-child(5n + 3) {
-    grid-row-end: span 35; /* Medium height */
+
+/* On mobile (1 column), full width */
+@media (max-width: 767px) {
+    .column {
+        width: 100%;
+    }
+
+    .gallery-grid-portfolio {
+        flex-direction: column;
+    }
 }
-.gallery-item:nth-child(5n + 4) {
-    grid-row-end: span 25; /* Short height (landscape/square) */
-}
-.gallery-item:nth-child(5n + 5) {
-    grid-row-end: span 40; /* Tall height */
-}
-/* Ensure these span values work with grid-auto-rows: 10px */
 
 .gallery-card-link {
     display: block;
@@ -121,7 +144,7 @@
     left: 0;
     width: 100%;
     padding: var(--spacing-sm);
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
     color: var(--color-text-on-accent);
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -138,6 +161,7 @@
     margin-bottom: 0.25rem;
     color: var(--color-text-on-accent);
 }
+
 .gallery-caption p {
     font-size: var(--font-size-small);
     margin-bottom: 0;
@@ -156,7 +180,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.95);
     z-index: 200;
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -172,22 +197,16 @@
     position: relative;
     max-width: 90%;
     max-height: 90%;
+    padding: 0;
+    /* Remove paddings; position buttons with negative offsets instead */
 }
 
 .lightbox__img {
     display: block;
     max-width: 100%;
-    max-height: 80vh; /* Leave space for controls/caption */
+    max-height: 80vh;
+    /* Leave space for controls/caption */
     object-fit: contain;
-}
-
-.lightbox__caption {
-    color: var(--color-text-on-accent);
-    text-align: center;
-    padding: var(--spacing-sm);
-    max-width: 800px;
-    margin: var(--spacing-sm) auto 0;
-    font-size: var(--font-size-base);
 }
 
 .lightbox__button {
@@ -197,13 +216,19 @@
     background: rgba(255, 255, 255, 0.1);
     border: none;
     color: var(--color-text-on-accent);
-    padding: 1rem;
+    padding: 0;
+    /* Remove padding for precise sizing */
     cursor: pointer;
     z-index: 210;
     transition: background-color 0.2s;
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    /* Smaller standard size for all (desktop/mobile unified) */
+    width: 40px;
+    /* Smaller standard size for all (desktop/mobile unified) */
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lightbox__button:hover,
@@ -212,41 +237,53 @@
 }
 
 .lightbox__button--prev {
-    left: var(--spacing-md);
+    left: -60px;
+    /* Further left, outside image with buffer */
 }
 
 .lightbox__button--next {
-    right: var(--spacing-md);
+    right: -60px; /* Further right, outside image with buffer */
 }
 
 .lightbox__button--close {
     position: absolute;
-    top: var(--spacing-md);
-    right: var(--spacing-md);
-    transform: none;
-    height: 40px;
-    width: 40px;
-    background: none;
-    border-radius: 0;
+    top: calc(50% - 60px); /* Offset above the next button to avoid overlap */
+    transform: translateY(-50%); /* Maintain vertical centering within its offset position */
+    right: -60px; /* Same horizontal position as next button */
+    height: 40px; /* Match other buttons */
+    width: 40px; /* Match other buttons */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.lightbox__button svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Mobile adjustments */
+/* Mobile adjustments: Stack buttons at bottom, smaller offsets */
 @media (max-width: 768px) {
-    .lightbox__button--prev,
-    .lightbox__button--next {
+    .lightbox__button--prev {
+        left: 50%;
+        transform: translateX(-100%) translateY(50%); /* Center-left at bottom */
         top: auto;
-        bottom: var(--spacing-lg);
-        transform: none;
-        height: 50px;
-        width: 50px;
+        bottom: 20px;
     }
-    .lightbox__button--prev { left: var(--spacing-sm); }
-    .lightbox__button--next { right: var(--spacing-sm); }
+    
+    .lightbox__button--next {
+        left: 50%;
+        transform: translateX(0) translateY(50%); /* Center-right at bottom */
+        top: auto;
+        bottom: 20px;
+        right: auto;
+    }
+    
+    .lightbox__button--close {
+        top: calc(50% - 60px); /* Offset above on mobile too */
+        transform: translateY(-50%);
+        right: 20px; /* Closer to edge on mobile */
+        left: auto;
+        height: 40px;
+        width: 40px;
+    }
 }
 
 /* -------------------------------------------------------------------------- */

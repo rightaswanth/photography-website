@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let initialLoadComplete = false;
     let isLightboxOpen = false;
 
+    // Add helper to determine number of columns based on screen size
+    const getNumCols = () => {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+    };
+
     // --- 1. Data Fetching and Initialization ---
 
     /**
@@ -26,14 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch('/assets/data/portfolio.json');
             allGalleryData = await response.json();
-            
+
             // Check URL for initial filter state
             const urlParams = new URLSearchParams(window.location.search);
             const initialFilter = urlParams.get('filter') || 'All';
-            
+
             // Apply initial filter and render
             applyFilter(initialFilter);
-            
+
         } catch (error) {
             console.error('Error fetching portfolio data:', error);
             portfolioGrid.innerHTML = '<p class="text-center" style="color: red;">Failed to load portfolio items. Please try again later.</p>';
@@ -48,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const createGalleryCard = (item) => {
         // Fallback to gallery slug for link if hero_path is not present
         const galleryLink = `gallery-${item.slug}.html`;
-        
+
         return `
             <div class="gallery-item" data-category="${item.category}" data-index="${item.id}" tabindex="0">
                 <a href="${galleryLink}" class="gallery-card-link" data-id="${item.id}" aria-label="View case study for ${item.title}">
@@ -80,26 +87,47 @@ document.addEventListener('DOMContentLoaded', () => {
         let delay = 0;
 
         if (data.length === 0) {
-             portfolioGrid.innerHTML = '<p class="text-center" style="grid-column: 1 / -1;">No galleries found for this category.</p>';
-             return;
+            portfolioGrid.innerHTML = '<p class="text-center">No galleries found for this category.</p>';
+            return;
         }
 
-        data.forEach((item, index) => {
+        // Show all filtered items (no limit to 6 for full functionality across filters)
+        const displayData = data;
+
+        const numCols = getNumCols();
+        const columns = [];
+
+        // Create column containers dynamically
+        for (let i = 0; i < numCols; i++) {
+            const col = document.createElement('div');
+            col.classList.add('column');
+            portfolioGrid.appendChild(col);
+            columns.push(col);
+        }
+
+        // Create cards (no height set; CSS aspect-ratio handles uniform sizing)
+        displayData.forEach((item, index) => {
             const cardHtml = createGalleryCard(item);
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = cardHtml.trim();
             const card = tempDiv.firstChild;
-            
-            portfolioGrid.appendChild(card);
-            
-            // Apply animation effect after grid is attached to DOM
+            // No style.height - uniform via CSS
+
+            // Distribute round-robin for balanced columns (uniform height ensures perfect alignment)
+            const colIndex = index % numCols;
+            columns[colIndex].appendChild(card);
+        });
+
+        // Animate items
+        const allItems = portfolioGrid.querySelectorAll('.gallery-item');
+        allItems.forEach((item) => {
             if (!initialLoadComplete) {
                 setTimeout(() => {
-                    card.classList.add('visible');
+                    item.classList.add('visible');
                 }, delay);
-                delay += 50; // Staggered delay for simple animation
+                delay += 50;
             } else {
-                card.classList.add('visible');
+                item.classList.add('visible');
             }
         });
 
@@ -107,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
             initialLoadComplete = true;
         }
 
-        // Re-attach lightbox listeners to new items
+        // Re-attach lightbox listeners
         attachItemListeners();
     };
 
@@ -125,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. Render Grid
         renderGrid(filteredData);
-        
+
         // 3. Update Active Button State
         filterButtons.forEach(btn => {
             if (btn.dataset.filter === category) {
@@ -141,8 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
         filterStatus.textContent = `Filtered portfolio, showing ${category} results. Total items: ${filteredData.length}.`;
 
         // 5. Update URL (Shareable State)
-        const newUrl = (category === 'All') 
-            ? window.location.pathname 
+        const newUrl = (category === 'All')
+            ? window.location.pathname
             : `${window.location.pathname}?filter=${category}`;
         history.pushState({ filter: category }, '', newUrl);
     };
@@ -182,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isLightboxOpen = true;
 
         // Simple focus trap: set focus to the close button
-        closeButton.focus(); 
+        closeButton.focus();
         document.body.style.overflow = 'hidden';
     };
 
@@ -191,9 +219,9 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     const updateLightboxContent = () => {
         const item = filteredGalleryData[currentLightboxIndex];
-        
+
         // Use thumb_800 path as a simplified full-screen viewer demo
-        const imagePath = item.thumb_800 || item.thumb_400; 
+        const imagePath = item.thumb_800 || item.thumb_400;
 
         lightboxImageContainer.innerHTML = `
             <img src="${imagePath}" 
@@ -227,7 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
         isLightboxOpen = false;
         document.body.style.overflow = '';
         // Return focus to the item that opened the lightbox (best practice)
-        document.querySelector(`.gallery-item[data-index="${filteredGalleryData[currentLightboxIndex].id}"]`).focus();
+        const triggerItem = document.querySelector(`.gallery-item[data-index="${filteredGalleryData[currentLightboxIndex]?.id || 0}"]`);
+        if (triggerItem) triggerItem.focus();
     };
 
     // Attach lightbox item listeners (Delegation or run after renderGrid)
@@ -239,7 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // We follow the prompt requirement: "Clicking a card opens the accessible lightbox (can be modal or navigate to /gallery-{{slug}}.html — both OK)"
             link.addEventListener('click', (e) => {
                 // If JS is disabled, the default link navigation will work.
-                e.preventDefault(); 
+                e.preventDefault();
                 const id = parseInt(e.currentTarget.dataset.id);
                 openLightbox(id);
             });
