@@ -669,7 +669,23 @@ img {
 
 .newsletter-form {
     display: flex;
-    gap: var(--spacing-xs);
+    flex-direction: column;
+    /* Stack elements vertically by default (mobile) */
+    gap: var(--spacing-sm);
+    /* Increased gap for stacking */
+    margin-top: var(--spacing-sm);
+}
+
+.newsletter-form button {
+    width: 100%;
+    /* Make button take full width on mobile */
+}
+
+/* Section 8. Footer & Sticky CTA */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
     margin-top: var(--spacing-sm);
 }
 
@@ -679,7 +695,50 @@ img {
     background-color: transparent;
     color: var(--color-text-on-accent);
     flex-grow: 1;
-    max-width: 200px;
+    /* Default is 100% for mobile stacking */
+    width: 100%;
+}
+
+.newsletter-form button {
+    width: 100%;
+    /* Default 100% for mobile stacking */
+}
+
+/* --- Media Query for Desktop/Tablet (768px+) --- */
+@media (min-width: 768px) {
+    .newsletter-form {
+        flex-direction: row;
+        /* Go back to inline layout on larger screens */
+        gap: var(--spacing-xs);
+    }
+
+    .newsletter-form input {
+        /* Restrict max width for desktop design consistency */
+        max-width: 200px;
+        /* Reset width to allow flex-grow to work properly */
+        width: auto;
+    }
+
+    .newsletter-form button {
+        flex-shrink: 0;
+        width: auto;
+        /* Allow button to size naturally */
+    }
+}
+
+/* Ensure the Subscribe button is visible against the dark footer */
+.newsletter-form .button--secondary {
+    background-color: var(--color-brand);
+    color: var(--color-text-primary);
+    /* Dark text on brand background for contrast */
+    border-color: var(--color-brand);
+}
+
+.newsletter-form .button--secondary:hover,
+.newsletter-form .button--secondary:focus {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-primary);
+    border-color: var(--color-bg-light);
 }
 
 .newsletter-form input::placeholder {

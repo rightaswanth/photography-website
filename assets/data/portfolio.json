@@ -6,9 +6,9 @@
     "location": "Provence, France",
     "date": "2024-07-15",
     "slug": "chateau-provence",
-    "thumb_400": "/assets/img/thumbs/thumb-provence-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-provence-800.webp",
-    "hero_path": "/assets/img/galleries/hero-provence.webp"
+    "thumb_400": "/assets/img/bride-2566244.jpg",
+    "thumb_800": "/assets/img/bride-2566244.jpg",
+    "hero_path": "/assets/img/bride-2566244.jpg"
   },
   {
     "id": 2,
@@ -17,9 +17,9 @@
     "location": "California Coast",
     "date": "2024-06-20",
     "slug": "sienna-wedding",
-    "thumb_400": "/assets/img/thumbs/thumb-sienna-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-sienna-800.webp",
-    "hero_path": "/assets/img/galleries/hero-sienna.webp"
+    "thumb_400": "/assets/img/bride-6230420.jpg",
+    "thumb_800": "/assets/img/bride-6230420.jpg",
+    "hero_path": "/assets/img/bride-6230420.jpg"
   },
   {
     "id": 3,
@@ -28,9 +28,9 @@
     "location": "New York, NY",
     "date": "2024-05-10",
     "slug": "city-hall-elopement",
-    "thumb_400": "/assets/img/thumbs/thumb-cityhall-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-cityhall-800.webp",
-    "hero_path": "/assets/img/galleries/hero-cityhall.webp"
+    "thumb_400": "/assets/img/bride-6552057.jpg",
+    "thumb_800": "/assets/img/bride-6552057.jpg",
+    "hero_path": "/assets/img/bride-6552057.jpg"
   },
   {
     "id": 4,
@@ -39,8 +39,8 @@
     "location": "Scottish Highlands",
     "date": "2024-04-01",
     "slug": "highland-prewed",
-    "thumb_400": "/assets/img/thumbs/thumb-highland-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-highland-800.webp"
+    "thumb_400": "/assets/img/bride-6552057.jpg",
+    "thumb_800": "/assets/img/bride-6552057.jpg"
   },
   {
     "id": 5,
@@ -49,8 +49,8 @@
     "location": "Studio 47",
     "date": "2024-03-25",
     "slug": "vogue-editorial",
-    "thumb_400": "/assets/img/thumbs/thumb-vogue-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-vogue-800.webp"
+    "thumb_400": "/assets/img/couple-1779066.jpg",
+    "thumb_800": "/assets/img/couple-1779066.jpg"
   },
   {
     "id": 6,
@@ -59,8 +59,8 @@
     "location": "Oia, Santorini",
     "date": "2023-10-05",
     "slug": "santorini-sunset",
-    "thumb_400": "/assets/img/thumbs/thumb-santorini-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-santorini-800.webp"
+    "thumb_400": "/assets/img/couple-7065652.jpg",
+    "thumb_800": "/assets/img/couple-7065652.jpg"
   },
   {
     "id": 7,
@@ -69,8 +69,8 @@
     "location": "Upstate New York",
     "date": "2023-08-12",
     "slug": "barn-wedding",
-    "thumb_400": "/assets/img/thumbs/thumb-barn-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-barn-800.webp"
+    "thumb_400": "/assets/img/couple-7743478.jpg",
+    "thumb_800": "/assets/img/couple-7743478.jpg"
   },
   {
     "id": 8,
@@ -79,8 +79,8 @@
     "location": "Mojave Desert",
     "date": "2023-07-01",
     "slug": "desert-prewed",
-    "thumb_400": "/assets/img/thumbs/thumb-desert-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-desert-800.webp"
+    "thumb_400": "/assets/img/couple-8019370.jpg",
+    "thumb_800": "/assets/img/couple-8019370.jpg"
   },
   {
     "id": 9,
@@ -89,7 +89,7 @@
     "location": "London, UK",
     "date": "2023-05-18",
     "slug": "fashion-lookbook",
-    "thumb_400": "/assets/img/thumbs/thumb-fashion-400.webp",
-    "thumb_800": "/assets/img/thumbs/thumb-fashion-800.webp"
+    "thumb_400": "/assets/img/engaged-6750227.jpg",
+    "thumb_800": "/assets/img/engaged-6750227.jpg"
   }
 ]
